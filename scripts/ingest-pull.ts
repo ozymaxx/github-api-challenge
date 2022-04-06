@@ -9,6 +9,11 @@ import { postData } from "./ingest-common";
 
   const pull_requests = await fetch(
     "https://api.github.com/repos/blockprotocol/blockprotocol/pulls/277"
+    // {
+    //   headers: {
+    //     Authorization: process.env.PERSONAL_ACCESS_TOKEN,
+    //   },
+    // }
   ).then((resp) => resp.json());
 
   console.log("**** Posting Pull Request Data ****");
