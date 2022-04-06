@@ -21,7 +21,9 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write '**/*.{js,json,ts}'",
-    "query": "ts-node scripts/query.ts --transpile-only",
+    "query": "ts-node ./scripts/query.ts --transpile-only",
+    "ingest-pulls": "ts-node ./scripts/ingest-pulls.ts --transpile-only",
+    "ingest-commits": "ts-node ./scripts/ingest-commits.ts --transpile-only",
     "start": "nodemon ./src/index.ts --transpile-only"
   }
 }

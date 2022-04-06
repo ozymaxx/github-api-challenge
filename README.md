@@ -8,6 +8,11 @@
 
 See document set separately.
 
+## Run Ingest Scripts
+
+`yarn ingest-pulls`
+`yarn ingest-commits`
+
 ## Test queries
 
 `yarn query`

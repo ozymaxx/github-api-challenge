@@ -8,6 +8,18 @@ app.use(bodyParser.json());
 // ********************* ROUTES ********************* //
 
 /**
+ * Accepts a collection of data, as JSON. This data is parsed and transformed into entities, and links are derived.
+ *
+ * @todo implement me. you may redesign the endpoint and accompanying ingest scripts to match
+ */
+app.post("/post", (req, res, _next) => {
+  const data = req.body;
+
+  // console.log(`Received Data: ${JSON.stringify(data)}`); // Left for debugging purposes
+  res.status(501).send();
+});
+
+/**
  * Given (a) id of an entity and (b) an integer passed as a query param,
  * provide the graph with the given entity at the root,
  * resolved to a depth specified by the integer.
