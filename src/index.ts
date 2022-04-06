@@ -12,7 +12,7 @@ app.use(bodyParser.json());
  *
  * @todo implement me. you may redesign the endpoint and accompanying ingest scripts to match
  */
-app.post("/post", (req, res, _next) => {
+app.post("/post", async (req, res, _next) => {
   const data = req.body;
 
   // console.log(`Received Data: ${JSON.stringify(data)}`); // Left for debugging purposes
@@ -20,6 +20,26 @@ app.post("/post", (req, res, _next) => {
 });
 
 /**
+ * Returns the list of entities
+ *
+ * @todo implement me. you may redesign the endpoint
+ */
+app.get("/entities", async (_req, res) => {
+  res.status(501).send();
+});
+
+/**
+ * Returns the list of links
+ *
+ * @todo implement me. you may redesign the endpoint
+ */
+app.get("/links", async (_req, res) => {
+  res.status(501).send();
+});
+
+/**
+ * --- Optional Extension ---
+ *
  * Given (a) id of an entity and (b) an integer passed as a query param,
  * provide the graph with the given entity at the root,
  * resolved to a depth specified by the integer.
@@ -33,6 +53,8 @@ app.get("/graph/:entity_id", async (req, res) => {
 });
 
 /**
+ * --- Optional Extension ---
+ *
  * Given a JSON object passed as an URL-encoded query param,
  * find entities that are of or contain the same structure.
  *
