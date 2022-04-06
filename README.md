@@ -10,7 +10,7 @@ See document set separately.
 
 ## Run Ingest Scripts
 
-`yarn ingest-pulls`
+`yarn ingest-pull`
 `yarn ingest-commits`
 
 ## Test queries

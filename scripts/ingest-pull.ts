@@ -3,7 +3,9 @@ import fetch from "node-fetch";
 import { postData } from "./ingest-common";
 
 (async () => {
-  console.log("**** Querying Pull Requests from Github ****");
+  console.log(
+    "**** Querying Data associated with Pull Request #277 from Github ****"
+  );
 
   const pull_requests = await fetch(
     "https://api.github.com/repos/blockprotocol/blockprotocol/pulls/277"
