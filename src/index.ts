@@ -12,7 +12,7 @@ app.use(bodyParser.json());
  *
  * @todo implement me. you may redesign the endpoint and accompanying ingest scripts to match
  */
-app.post("/post", async (req, res, _next) => {
+app.post("/ingest", async (req, res, _next) => {
   const data = req.body;
 
   // console.log(`Received Data: ${JSON.stringify(data)}`); // Left for debugging purposes
@@ -60,7 +60,7 @@ app.get("/graph/:entity_id", async (req, res) => {
  *
  * @todo implement me. you may redesign the endpoint, but must update scripts/query.ts to match
  */
-app.get("/entities", async (req, res) => {
+app.get("/entities/structure", async (req, res) => {
   const { object } = req.query;
 
   res.status(501).send();
