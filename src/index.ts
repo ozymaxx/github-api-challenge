@@ -1,31 +1,29 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { port } from "./config";
+import { Controller } from "./controller";
 
 const app = express();
 app.use(bodyParser.json());
+const controller = new Controller();
 
 // ********************* ROUTES ********************* //
 
 /**
  * Accepts a collection of data, as JSON. This data is parsed and transformed into entities, and links are derived.
- *
- * @todo implement me. you may redesign the endpoint and accompanying ingest scripts to match
  */
 app.post("/ingest", async (req, res, _next) => {
   const data = req.body;
-
-  // console.log(`Received Data: ${JSON.stringify(data)}`); // Left for debugging purposes
-  res.status(501).send();
+  controller.processEntity(data);
+  res.sendStatus(200);
 });
 
 /**
  * Returns the list of entities
- *
- * @todo implement me. you may redesign the endpoint
  */
 app.get("/entities", async (_req, res) => {
-  res.status(501).send();
+  console.log(controller.getEntities());
+  res.status(200).send(controller.getEntities());
 });
 
 /**
@@ -34,7 +32,8 @@ app.get("/entities", async (_req, res) => {
  * @todo implement me. you may redesign the endpoint
  */
 app.get("/links", async (_req, res) => {
-  res.status(501).send();
+  console.log(controller.getLinks());
+  res.status(200).send(controller.getLinks());
 });
 
 /**

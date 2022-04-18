@@ -9,12 +9,12 @@ import { postData } from "./ingest-common";
   );
 
   const commits = await fetch(
-    "https://api.github.com/repos/blockprotocol/blockprotocol/pulls/252/commits"
-    // {
-    //   headers: {
-    //     Authorization: process.env.PERSONAL_ACCESS_TOKEN,
-    //   },
-    // }
+    "https://api.github.com/repos/blockprotocol/blockprotocol/pulls/252/commits",
+    {
+       headers: {
+         Authorization: process.env.PERSONAL_ACCESS_TOKEN,
+       }
+    }
   ).then((resp) => resp.json());
 
   console.log("**** Posting Commits Data ****");
